@@ -1,10 +1,11 @@
-import React from "react";
 import { createRoot } from "react-dom/client";
+import Header from "./components/Header/Header";
 const App = () => {
-  return React.createElement(
-    "div",
-    {},
-    React.createElement("h1", null, "Test")
+  return (
+    <div>
+      <Header />
+      <h1>test</h1>
+    </div>
   );
 };
 
