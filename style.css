@@ -4,7 +4,7 @@
   --main-bg: rgb(255, 255, 255);
   --main-texct-color: #000000;
   --dark-theme-bg: #000000;
-  --dark-theme-text-color: lime;
+  --dark-theme-text-color: wheat;
 }
 
 html,
@@ -61,15 +61,19 @@ ul li a:hover {
   background-color: var(--dark-theme-bg);
   color: var(--dark-theme-text-color);
   border-color: var(--dark-theme-text-color);
+
+  a {
+    color: #ffffff;
+  }
 }
 
 main {
   flex: 1; /* This makes main expand to fill remaining space */
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin: 0;
+  margin: 0 auto;
   padding: 1rem;
   font-family: "Space Grotesk", sans-serif;
 }
@@ -77,6 +81,10 @@ main {
 main section {
   flex-basis: 45%;
   font-family: "Space Grotesk", sans-serif;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 main section p {
@@ -113,6 +121,7 @@ footer ul {
   flex-direction: column;
 }
 
+/* ****************************   mobile *********************** */
 @media (max-width: 900px) {
   header nav ul,
   footer ul {
@@ -120,5 +129,9 @@ footer ul {
   }
   main {
     flex-direction: column;
+  }
+
+  .theme-input {
+    flex-direction: row;
   }
 }
