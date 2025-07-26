@@ -76,6 +76,7 @@ main {
   margin: 0 auto;
   padding: 1rem;
   font-family: "Space Grotesk", sans-serif;
+  width: 100%;
 }
 
 main section {
