@@ -1,12 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+
+:root {
+  --main-bg: rgb(255, 255, 255);
+  --main-texct-color: #000000;
+  --dark-theme-bg: #000000;
+  --dark-theme-text-color: lime;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%; /* Required for full-page layout */
+  display: flex;
+  flex-direction: column;
 }
 
 body {
   width: 100%;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -14,6 +31,7 @@ header {
   margin: 0;
   padding: 1rem;
   border-bottom: 1px solid black;
+  background-color: var(--main-bg);
 }
 
 header nav ul {
@@ -27,6 +45,7 @@ header nav ul {
 
 ul li {
   font-size: 2rem;
+  color: var(--main-text-color);
 }
 
 ul li a {
@@ -38,13 +57,21 @@ ul li a:hover {
   text-decoration: underline;
 }
 
+.dark {
+  background-color: var(--dark-theme-bg);
+  color: var(--dark-theme-text-color);
+  border-color: var(--dark-theme-text-color);
+}
+
 main {
+  flex: 1; /* This makes main expand to fill remaining space */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   margin: 0;
   padding: 1rem;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 main section {
@@ -56,6 +83,7 @@ main section p {
   line-height: 50px;
   text-align: justify;
 }
+
 main section img {
   border-radius: 50%;
   width: 75%;
@@ -63,6 +91,7 @@ main section img {
 
 footer {
   border-top: 1px solid black;
+  padding: 1rem;
 }
 
 footer ul {
@@ -70,4 +99,26 @@ footer ul {
   flex-direction: row;
   justify-content: space-around;
   list-style-type: none;
+}
+
+#main-image {
+  margin: 0 auto;
+  opacity: 0.4;
+}
+
+.theme-input {
+  margin-top: 10px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  header nav ul,
+  footer ul {
+    flex-direction: column;
+  }
+  main {
+    flex-direction: column;
+  }
 }
